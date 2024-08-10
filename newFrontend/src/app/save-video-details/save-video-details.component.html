@@ -1,0 +1,91 @@
+<div class="main-container">
+
+    <div>hi</div>
+    <div>
+        <div class="mat-title">Add Video Metadata</div>
+        <form  action="">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput required>
+          </mat-form-field> 
+
+          <div>
+            <mat-form-field appearance="fill"> 
+              <mat-label>Description</mat-label>
+              <textarea matInput></textarea>
+  
+            </mat-form-field>
+          </div>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Video Status</mat-label>
+            <mat-select >
+              <mat-option value="PUBLIC">PUBLIC</mat-option>
+              <mat-option value="PRIVATE">PRIVATE</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div>
+            <mat-form-field class="example-chip-list">
+              <mat-label>Favorite Fruits</mat-label>
+              <mat-chip-grid #chipGrid aria-label="Enter fruits">
+                @for (fruit of tags(); track fruit) {
+                  <mat-chip-row
+                    (removed)="remove(fruit)"
+                    [editable]="true"
+                    (edited)="edit(fruit, $event)"
+                    [aria-description]="'press enter to edit ' + fruit.name"
+                  >
+                    {{fruit.name}}
+                    <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip-row>
+                }
+                <input
+                  placeholder="Enter Tags"
+                  [matChipInputFor]="chipGrid"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="add($event)"
+                />
+              </mat-chip-grid>
+            </mat-form-field>
+            
+        </div>
+
+        <label for="inputGroupFile01">Upload Thumbnail
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFile01" (change)="onfileSelected($event)">
+          </div>
+          <br>
+          <div *ngIf="fileSelected">
+            <p>Selected File: {{selectedFileName}}</p>
+
+          </div>
+          <hr *ngIf="fileSelected">
+          <div *ngIf="fileSelected">
+            <button  mat-raised-button color="Primary" (click)="onUpload()" type="button">Upload</button>
+          </div>
+          <br>
+        </label>  
+          
+          
+          <div>
+            <button id="btn" type="submit"  color="Primary">Save</button>
+          </div>
+
+          
+        </form>
+
+    </div>
+    <div >Video player
+
+     
+
+    </div>
+    <div >
+        Hi
+    </div>
+
+</div>

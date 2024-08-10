@@ -1,0 +1,24 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .example-icon{
+    border: none;
+    color: rgb(219, 219, 219);
+    background: none;
+    padding-right: 20px;
+  }
+
+
+  mat-toolbar{
+    background-color: rgb(23, 23, 23);
+
+  }
+
+  span{
+    color: white;
+  }
+
+  .logo-menu{
+    text-align: center;
+  }

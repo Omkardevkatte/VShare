@@ -1,0 +1,11 @@
+#btn{
+    border-radius: none;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    background-color: blue;
+
+}   
+.main-container{
+    display: flex;
+    justify-content: space-between;
+}
